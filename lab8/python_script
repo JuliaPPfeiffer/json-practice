@@ -1,6 +1,5 @@
 #!/home/gitpod/.pyenv/shims/python3
 import json
-import csv
 
 path = '/workspace/json-practice/data/schacon.repos.json'
 
@@ -18,3 +17,4 @@ with open(path, 'r') as file:
         else:
             csv_file.close()
 
+# Found documentation for writelines & open/close file from: https://www.geeksforgeeks.org/python-append-to-a-file/
