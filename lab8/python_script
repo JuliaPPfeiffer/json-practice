@@ -1,0 +1,20 @@
+#!/home/gitpod/.pyenv/shims/python3
+import json
+import csv
+
+path = '/workspace/json-practice/data/schacon.repos.json'
+
+# 1. Reads in the file as JSON:
+with open(path, 'r') as file:
+    data = json.load(file)
+# 2. Get out the name objects and assemble those four fields into a comma-separated line:
+# 3. Appends this line to a new text file named chacon.csv
+    i = 0
+    for r in data:
+        if i < 5:
+            csv_file = open("chacon.csv", "a")
+            csv_file.writelines((r['name'],',', r['html_url'],',', r['updated_at'],',', r['visibility'],'\n'))
+            i = i + 1
+        else:
+            csv_file.close()
+
